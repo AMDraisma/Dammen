@@ -2,15 +2,18 @@ import javax.swing.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.io.*;
+import java.net.URL;
 
 
 public class Help extends JFrame implements FocusListener {
 
     public Help() {
-        File helpFile = new File("help.txt");
+
+        InputStream helpFile = this.getClass().getResourceAsStream("/help.txt");
+
         StringBuilder sb = new StringBuilder("");
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(helpFile));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(helpFile));
             String line;
             while ((line = reader.readLine()) != null) {
                 sb.append(line+"\n");
