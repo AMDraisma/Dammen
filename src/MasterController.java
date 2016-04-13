@@ -7,8 +7,7 @@ import java.awt.event.ActionListener;
 public class MasterController extends JPanel {
     private JTextField invoerVakSelecterenX, invoerVakSelecterenY, invoerVakZetX, invoerVakZetY, tellerWit, tellerZwart;
     private JLabel invoerBeginPosLabel, invoerEindPosLabel, geslagenLabel;
-    private JButton verzetKnop, restartKnop;
-    private boolean eindeBeurt;
+    private JButton verzetKnop, restartKnop, eindigBeurtKnop;
     private JLabel beurt;
     private int stenenWit, stenenZwart;
     Bord bord;
@@ -64,14 +63,14 @@ public class MasterController extends JPanel {
         c.gridy = 2;
         this.add(invoerVakZetY, c);
 
-        tellerWit = new JTextField( 5 ); //geslagen stenenteller v/d witte stenen FIXME: 6-4-2016
+        tellerWit = new JTextField( 5 ); //geslagen stenenteller v/d witte stenen
         tellerWit.setEditable(false);
         tellerWit.setText( "Wit: 0" );
         c.gridx = 0;
         c.gridy = 5;
         this.add(tellerWit, c);
 
-        tellerZwart = new JTextField( 5 ); //geslagen stenenteller v/d zwarte stenen FIXME: 6-4-2016
+        tellerZwart = new JTextField( 5 ); //geslagen stenenteller v/d zwarte stenen
         tellerZwart.setEditable(false);
         tellerZwart.setText( "Zwart: 0" );
         c.gridx = 1;
@@ -101,14 +100,27 @@ public class MasterController extends JPanel {
         this.add(verzetKnop, c);
         verzetKnop.addActionListener( new KnopHandlerHelpKnop() );
 
+        eindigBeurtKnop = new JButton("Eindig beurt"); //Eindig beurt knopje
         c.gridwidth = 2;
+        c.gridx = 0;
+        c.gridy = 6;
+        this.add(eindigBeurtKnop, c);
+        eindigBeurtKnop.addActionListener( new KnopHandlerEindBeurtKnop() );
 
         restartKnop = new JButton("Restart"); //restart knopjes
         c.gridx = 2;
+        c.gridwidth = 2;
         c.gridy = 6;
         this.add(restartKnop, c);
         restartKnop.addActionListener( new KnopHandlerRestartKnop() );
 
+    }
+
+    class KnopHandlerEindBeurtKnop implements ActionListener { // FIXME: 13-4-2016
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            eindeBeurt = true;
+        }
     }
 
     class KnopHandlerHelpKnop implements ActionListener {
