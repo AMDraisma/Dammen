@@ -9,7 +9,6 @@ public class MasterController extends JPanel {
     private JLabel invoerBeginPosLabel, invoerEindPosLabel, geslagenLabel;
     private JButton verzetKnop, restartKnop, eindigBeurtKnop;
     private JLabel beurt;
-    private int stenenWit, stenenZwart;
     Bord bord;
     Dammen dammen;
 
@@ -119,7 +118,7 @@ public class MasterController extends JPanel {
     class KnopHandlerEindBeurtKnop implements ActionListener { // FIXME: 13-4-2016
         @Override
         public void actionPerformed(ActionEvent e) {
-            eindeBeurt = true;
+            bord.veranderBeurt();
         }
     }
 
