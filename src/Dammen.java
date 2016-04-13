@@ -21,6 +21,7 @@ public class Dammen extends JFrame {
 
         this.setSize(800, 550);
         setResizable(false);
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
