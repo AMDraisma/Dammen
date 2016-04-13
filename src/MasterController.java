@@ -116,7 +116,7 @@ public class MasterController extends JPanel {
 
     }
 
-    class KnopHandlerEindBeurtKnop implements ActionListener { // FIXME: 13-4-2016
+    class KnopHandlerEindBeurtKnop implements ActionListener { 
         @Override
         public void actionPerformed(ActionEvent e) {
             bord.veranderBeurt();
