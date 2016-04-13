@@ -5,11 +5,10 @@ import java.awt.event.ActionListener;
 
 
 public class MasterController extends JPanel {
-    private JTextField invoerVakSelecterenX, invoerVakSelecterenY, invoerVakZetX, invoerVakZetY, tellerWit, tellerZwart;
+    private JTextField invoerVakSelecterenX, invoerVakSelecterenY, invoerVakZetX, invoerVakZetY, tellerWit, tellerZwart, beurt;
     private JLabel invoerBeginPosLabel, invoerEindPosLabel, geslagenLabel;
     private JButton verzetKnop, restartKnop;
     private boolean eindeBeurt;
-    private JLabel beurt;
     private int stenenWit, stenenZwart;
     Bord bord;
     Dammen dammen;
@@ -21,14 +20,16 @@ public class MasterController extends JPanel {
         this.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
-        this.beurt = new JLabel("");
+        this.beurt = new JTextField("");
+        this.beurt.setEditable(false);
         c.fill = GridBagConstraints.HORIZONTAL;
         // eigenschappen van constraints zoals weightx worden behouden
         // hoeven dus maar eenmalig te worden ingesteld
         c.weightx = 0.5;
-        c.gridwidth = 4;
+        c.gridwidth = 2;
+        c.gridx = 1;
         c.gridy = 0;
-        this.add(beurt, c);
+        this.add(this.beurt, c);
 
         c.gridwidth = 2;
 
