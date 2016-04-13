@@ -32,6 +32,7 @@ public class Help extends JFrame implements FocusListener {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(300,400);
         this.add(scrollPane);
+        this.setLocationRelativeTo(null);
         this.addFocusListener(this);
         this.setVisible(true);
         setResizable(false);
