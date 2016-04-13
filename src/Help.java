@@ -1,12 +1,29 @@
 import javax.swing.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.io.*;
 
 
 public class Help extends JFrame implements FocusListener {
 
     public Help() {
-        JTextArea helpText = new JTextArea("Sleep met de muis of voer de coördinaten in om stenen te verzetten.", 5, 40);
+        File helpFile = new File("help.txt");
+        StringBuilder sb = new StringBuilder("");
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(helpFile));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line+"\n");
+            }
+        } catch (FileNotFoundException e) {
+            new ErrorMsg("Fout!", "Fout in code: help.txt kon niet gevonden worden");
+            return;
+        } catch (IOException e) {
+            new ErrorMsg("Fout!", "Onbekende fout in code");
+            return;
+        }
+
+        JTextArea helpText = new JTextArea(sb.toString(), 5, 40);
         JScrollPane scrollPane = new JScrollPane(helpText);
         helpText.setLineWrap(true);
         helpText.setWrapStyleWord(true);
