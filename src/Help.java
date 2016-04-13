@@ -1,20 +1,20 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
-/**
- * Created by crude on 4-4-16.
- */
+
 public class Help extends JFrame implements FocusListener {
+
     public Help() {
         JTextArea helpText = new JTextArea("Sleep met de muis of voer de coördinaten in om stenen te verzetten.", 5, 40);
+        JScrollPane scrollPane = new JScrollPane(helpText);
         helpText.setLineWrap(true);
         helpText.setWrapStyleWord(true);
+        helpText.setEditable(false);
         this.setTitle("Instructies");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setSize(300,400);
-        this.add(helpText);
+        this.add(scrollPane);
         this.addFocusListener(this);
         this.setVisible(true);
         setResizable(false);

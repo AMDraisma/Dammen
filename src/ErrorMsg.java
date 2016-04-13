@@ -3,9 +3,7 @@ import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
-/**
- * Created by crude on 4-4-16.
- */
+
 public class ErrorMsg extends JFrame implements FocusListener {
     public ErrorMsg(String title, String message) {
         this.setTitle(title);
@@ -20,24 +18,6 @@ public class ErrorMsg extends JFrame implements FocusListener {
 
 
     }
-
-//    public class ErrorBericht {
-//        public void addComponentsToPane(Container pane) {
-//            pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
-//
-//            addAButton("Button 1", pane);
-//            addAButton("Button 2", pane);
-//            addAButton("Button 3", pane);
-//            addAButton("Long-Named Button 4", pane);
-//            addAButton("5", pane);
-//        }
-//
-//        private void addAButton(String text, Container container) {
-//            JButton button = new JButton(text);
-//            button.setAlignmentX(Component.CENTER_ALIGNMENT);
-//            container.add(button);
-//        }
-//    }
 
     @Override
     public void focusGained(FocusEvent focusEvent) {

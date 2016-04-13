@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.event.MouseInputListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -12,7 +11,7 @@ public class Dammen extends JFrame {
     Point sleepOorsprong;
 
     public static void main (String[] args) {
-        JFrame frame = new Dammen();
+        new Dammen();
     }
 
     public Dammen () {
